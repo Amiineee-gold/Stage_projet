@@ -1,0 +1,103 @@
+/* Styles généraux */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f7f6;
+ 
+  padding: 20px;
+}
+
+/* Conteneurs */
+.container {
+  
+  margin-top: 800px;
+  margin-left: 250px;
+  
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Formulaire */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Tableaux */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background: #007bff;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Boutons */
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button.details {
+  background-color: #ffc107;
+  color: white;
+}
+
+button.edit {
+  background-color: #28a745;
+  color: white;
+}
+
+button.delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+button.add {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Boîte de détails */
+.details {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.details input {
+  background: #f4f4f4;
+  border: none;
+  cursor: not-allowed;
+}

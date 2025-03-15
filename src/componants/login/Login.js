@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import users from './data'; // Import the users data
 import './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -22,7 +23,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Email validation
     if (!email) {
       setError('Please enter your email address.');
       return;
@@ -32,7 +32,6 @@ const Login = () => {
       return;
     }
 
-    // Password validation
     if (!password) {
       setError('Please enter your password.');
       return;
@@ -41,16 +40,26 @@ const Login = () => {
       setError(
         'Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.'
       );
-      setPassword(''); // Clear the password field
+      setPassword('');
       return;
     }
 
-    // Simulate login logic
     setIsLoading(true);
     try {
-      console.log('Logging in with:', email, password);
-      setError('');
-      alert('Login successful!');
+      const user = users.find(user => user.email === email && user.password === password);
+      if (user) {
+        setError('');
+        alert('Login successful!');
+        
+        // Redirection based on user status
+        if (user.status === "owner") {
+          navigate('/Home');
+        } else if (user.status === "Teacher") {
+          navigate('/HomeTeachers');
+        }
+      } else {
+        setError('Invalid email or password.');
+      }
     } catch (err) {
       setError('An error occurred. Please try again.');
     } finally {
@@ -61,39 +70,21 @@ const Login = () => {
   return (
     <div className="login-container">
       <h2>TIKO SCHOOL</h2>
-      
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+          <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </div>
         <div className="form-group">
           <label htmlFor="password">Password</label>
           <div className="password-input">
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            
+            <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </div>
         </div>
         {error && <p className="error">{error}</p>}
         <div className="form-group">
           <button type="submit" disabled={isLoading}>
-          <Link to="/Home" >
-              {isLoading ? 'Logging in...' : 'Log In'}
-          </Link>
-            
-              
+            {isLoading ? 'Logging in...' : 'Log In'}
           </button>
         </div>
         <div className="form-group">

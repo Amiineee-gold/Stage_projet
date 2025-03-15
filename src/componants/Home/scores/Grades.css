@@ -1,0 +1,48 @@
+.table{
+    width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+
+}
+
+.save-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+@media print {
+    /* Cacher les boutons */
+    .btn {
+        display: none;
+    }
+
+    /* Cacher les champs de sélection */
+    .form-select {
+        display: none;
+    }
+
+    /* Cacher l'icône Save */
+    .save-icon {
+        display: none;
+    }
+
+    /* Cacher le Header et Sidebar */
+    header, .sidebar {
+        display: none;
+    }
+
+    /* Ajuster le contenu principal pour utiliser toute la page */
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .card {
+        box-shadow: none;
+        border: none;
+    }
+}
+
+  

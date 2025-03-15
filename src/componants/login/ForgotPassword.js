@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Login.css'; // Reuse the same CSS
-
+import './Login.css'; 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
-
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Email validation
     if (!email) {
       setError('Please enter your email address.');
       return;
@@ -23,14 +18,11 @@ const ForgotPassword = () => {
       setError('Please enter a valid email address (example@domain.com).');
       return;
     }
-
-    // Simulate sending reset link
     console.log('Reset link sent to:', email);
     setError('');
-    setEmail(''); // Clear the email field
+    setEmail('');
     alert('Reset link sent! Check your email.');
   };
-
   return (
     <div className="login-container">
       <h2>TIKO SCHOOL</h2>
@@ -38,13 +30,7 @@ const ForgotPassword = () => {
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+          <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </div>
         {error && <p className="error">{error}</p>}
         <div className="form-group">
@@ -61,5 +47,4 @@ const ForgotPassword = () => {
     </div>
   );
 };
-
 export default ForgotPassword;

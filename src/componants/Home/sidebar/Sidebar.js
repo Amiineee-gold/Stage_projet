@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaBars,  FaUser, FaCog, FaSignOutAlt, FaUsers, FaSimCard, FaWaveSquare, FaArrowAltCircleRight,  FaHatCowboySide} from 'react-icons/fa';
+import { FaBars,  FaUser, FaCog, FaSignOutAlt, FaUsers, FaSimCard, FaWaveSquare, FaArrowAltCircleRight,  FaHatCowboySide, FaLiraSign, FaList} from 'react-icons/fa';
 import './Sidebar.css'; 
 import { Link } from 'react-router-dom';
 const Sidebar = () => {
@@ -9,7 +9,7 @@ const Sidebar = () => {
     setIsOpen(!isOpen);
   };
 
-  return (
+  return (<div>
     <div className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-toggle" onClick={toggleSidebar}>
         <FaBars />
@@ -22,6 +22,10 @@ const Sidebar = () => {
         <div className="sidebar-item">
           <FaUsers className="sidebar-icon" />
           <span className="sidebar-text"><Link to="/Teacher" style={{color:'white'}} >Teachers</Link></span>
+        </div>
+        <div className="sidebar-item">
+          <FaList className="sidebar-icon" />
+          <span className="sidebar-text"><Link to="/Absence" style={{color:'white'}} >Absence</Link></span>
         </div>
         <div className="sidebar-item">
           <FaSimCard className="sidebar-icon" />
@@ -58,7 +62,7 @@ const Sidebar = () => {
         </div>
         
       </div>
-    </div>
+    </div></div>
   );
 };
 

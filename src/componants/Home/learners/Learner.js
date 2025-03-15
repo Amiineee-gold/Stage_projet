@@ -1,16 +1,18 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from 'react';
+import StudentList from './StudentList';
+import Sidebar from '../sidebar/Sidebar';
 import Header from '../Header/Header';
-import Sidebar from '../sidebar/Sidebar'
-const Learner = () => {
+import './styles.css';
+//import StudentForm from './StudentForm';
+
+export default function Learner() {
   return (
-    <div>
-       <Header/>
-       <Sidebar/>
-      <button><Link to="/Home" aria-label="Learner" style={{color:'white'}}>back to Home</Link></button>
+    <div className="container">
+      <Sidebar />
+      <Header />
+      <h2>Gestion des Étudiants</h2>
+      <StudentList />
+      
     </div>
-  )
+  );
 }
-
-export default Learner
-

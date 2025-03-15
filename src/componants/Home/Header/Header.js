@@ -13,7 +13,6 @@ const Header = () => {
     <header className="header">
       <div className="header-left">
         <div className="logo"><Link to="/Home" style={{color:'white'}}><img src="projet_stage/src/componants/images/zenitsu-agatsuma-5120x2880-17046.jpg" alt="TIKO SCHOOL" /> </Link>
-          
         </div>
         
       </div>
