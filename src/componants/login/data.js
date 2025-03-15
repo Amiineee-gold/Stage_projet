@@ -1,5 +1,5 @@
 // src/data.js
-const users = [
+export const users = [
     {
       email: "amin@gmail.com",
       password: "Qwerty1234!", // Example of a valid password
@@ -14,4 +14,8 @@ const users = [
     
   ];
   
+
   export default users;
+  export  const updateUsers = (newData) => {
+    users = { ...users, ...newData };
+  };

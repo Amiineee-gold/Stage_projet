@@ -11,7 +11,7 @@ import Expenses from './componants/Home/Expenses/Expenses'
 import Accounting from './componants/Home/Accounting/Accounting'
 import DailyReport from './componants/Home/Daily_Report/DailyReport'
 import Profile from './componants/Home/Profile/Profile'
-import Account from './componants/Home/Account/Account'
+
 import OtherSettings from './componants/Home/Other_Settings/OtherSetting'
 import StudentForm from './componants/Home/learners/StudentForm'
 import StudentEdit from './componants/Home/learners/StudentEdit';
@@ -24,6 +24,10 @@ import Notes from './componants/HomeTeacher/Notes/Notes';
 import HomeTeachers from './componants/HomeTeacher/HomeTeachers'
 import AbsenceT from './componants/HomeTeacher/Absences/AbsencesT';
 import ProfileT from './componants/HomeTeacher/Profile/ProfileT';
+import AccountSettings from "./componants/Home/Account/AccountSettings";
+import Privacy from "./componants/Home/Account/Privacy";
+import ExportData from "./componants/Home/Account/ExportData";
+
 function App() {
   const teacherList=[
     {id:1,Name:"Mona", LearnList:[{Name:"Amine",Username:"bneba",level:"3A",BillList:250}]},
@@ -59,12 +63,18 @@ function App() {
         <Route path="/DailyReport" element={<DailyReport />} />
         <Route path="/OtherSettings" element={<OtherSettings />} />
         <Route path="/Profile" element={<Profile />} />
-        <Route path="/Account" element={<Account />} />
+       
         <Route path="/StudentForm" element={<StudentForm />} />
         <Route path="/Notes" element={<Notes />} />
         <Route path="/HomeTeachers" element={< HomeTeachers/>} />
         <Route path="/scores" element={<OurScore info={teacherList}/>} />
         <Route path="/GradesList/:id" element={<OurGrades info={teacherList}/>} />
+
+
+        <Route path="/settings" element={<AccountSettings />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/export" element={<ExportData />} />
+        <Route path="*" element={<AccountSettings />} />
         
         
         
