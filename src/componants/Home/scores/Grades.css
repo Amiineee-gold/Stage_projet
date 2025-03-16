@@ -1,8 +1,14 @@
-.table{
-    width: 800px;
-    padding: 20px;
-    margin: 0 auto;
+.card{
+    margin-top: 60px;
+    margin-left:250px ;
+}
 
+
+
+.select-level{
+    height: 40px;
+    position: relative;
+    top: 13px;
 }
 
 .save-icon {

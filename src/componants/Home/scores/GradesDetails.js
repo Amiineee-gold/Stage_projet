@@ -48,7 +48,6 @@ function OurGrades({info}){
         <>
             <Header />
             <Sidebar />
-            <div className="container mt-4">
                 <div className="card shadow-lg p-4 position-relative">
                 <div className="save-icon">
                         <img src="/save.png" alt="Save" style={{ width: 40 }} onClick={handlPrint}/>
@@ -56,7 +55,7 @@ function OurGrades({info}){
                     <h2 className="text-primary">Teacher: {selectedTeacher.Name}</h2>
                     <div className="row g-3 align-items-center mb-4">
                         <div className="d-flex col-md-4">
-                            <select className="form-select" onChange={(e)=>setFiltrBylevel(e.target.value)}>
+                            <select className="select-level form-select" onChange={(e)=>setFiltrBylevel(e.target.value)}>
                                 <option value="">All Levels</option>
                                 {levels.map((level, index) => (
                                     <option key={index} value={level}>
@@ -82,19 +81,18 @@ function OurGrades({info}){
                             <tbody>
                             {filteredStudents.map((student, index) => (
                                     <tr key={index}>
-                                        <td style={{ width: 200 }}>{student.Name} {student.Username}</td>
+                                        <td style={{ width:150,textAlign: "center"}}>{student.Name} {student.Username} </td>
                                         <td><input type="number" className="form-control" value={grades[index]?.Grade1 || ""} onChange={(e) => handleChange(index, "Grade1", e.target.value)} /></td>
                                         <td><input type="number" className="form-control" value={grades[index]?.Grade2 || ""} onChange={(e) => handleChange(index, "Grade2", e.target.value)} /></td>
                                         <td><input type="number" className="form-control" value={grades[index]?.Grade3 || ""} onChange={(e) => handleChange(index, "Grade3", e.target.value)} /></td>
                                         <td><input type="text" className="form-control" value={grades[index]?.Note || ""} readOnly /></td>
-                                        <td><button className="btn btn-primary" onClick={() => handleClick(index)}>Save</button></td>
+                                        <td><button className="btn btn-primary" onClick={() => handleClick(index)} style={{position: "relative", bottom: "10px"}}>Save</button></td>
                                     </tr>
                                 ))}
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
         </>
     );
 }export default OurGrades

@@ -1,13 +1,17 @@
+
 .table{
     width: 800px;
     padding: 20px;
     margin: 0 auto;
-
 }
 .filtreAndTotal{
     display:  flex;
     justify-content: space-around;
     align-items: center;
 
+}
+
+.text-center{
+    text-align: center;
 }
 

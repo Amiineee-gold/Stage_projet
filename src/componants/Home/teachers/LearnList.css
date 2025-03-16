@@ -2,3 +2,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+.searchByName{
+    position: relative;
+    bottom: 7px;
+    height: 38px;
+}
+
+.btnSearch{
+    height: 38px;
+    position: relative;
+    bottom: 17px;
+}

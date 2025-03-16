@@ -21,17 +21,17 @@ function OurBills({ info }) {
         <>
             <Header />
             <Sidebar />
-            <div className=" dashboard-container  mt-4">
+            <div className="Billsdashboard-container mt-4">
                 <div className="card shadow p-4">
                     <h2 className="text-primary"> {foundTeacher.Name}</h2>
                     <div className="filtreAndTotal">
                     <p className="fs-6 fw-bold">
                         Total: <span className="text-success">{totalSalary.toFixed(2)} DH</span>
                     </p>
-                    <div className="d-flex align-items-center ">
-                        <span className="fw-bold">Show Bills for:</span>
-                        <div className="input-group" style={{ maxWidth: "200px" }}>
-                            <input type="date" className="form-control" />
+                    <div className="d-flex align-items-center  ">
+                        <span className="fw-bold">Show Bills for  </span>
+                        <div className="input-group m-3" style={{ maxWidth: "200px",position:"relative",bottom:5}}>
+                            <input type="date" className="form-control" style={{height:"38px" ,position:"relative",top:10}} />
                             <button className="btn btn-primary">Apply</button>
                         </div>
                     </div>
@@ -44,15 +44,15 @@ function OurBills({ info }) {
                     <table className="table table-bordered table-hover mt-3">
                         <thead >
                             <tr>
-                                <th>Name</th>
-                                <th>Bills</th>
+                                <th className="text-center">Name</th>
+                                <th className="text-center">Bills</th>
                             </tr>
                         </thead>
                         <tbody>
                             {foundTeacher.LearnList.map((student, index) => (
                                 <tr key={index}>
-                                    <td>{student.Name} {student.Username}</td>
-                                    <td className="text-success fw-bold">
+                                    <td className="text-center">{student.Name} {student.Username}</td>
+                                    <td className="text-center text-success fw-bold">
                                         {(student.BillList * 0.15).toFixed(2)} DH
                                     </td>
                                 </tr>

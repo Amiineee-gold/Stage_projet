@@ -25,7 +25,6 @@ function OurLearners({ info }) {
         <>
             <Header />
             <Sidebar />
-            <div className="container mt-4">
                 <div className="card shadow-lg p-4">
                     <h2 className="text-primary">Teacher: {selectedTeacher.Name}</h2>
                     {/* Filter Form */}
@@ -46,16 +45,16 @@ function OurLearners({ info }) {
                             </select>
                         </div>
                         <div className="col-md-4">
-                            <label className="form-label fw-bold">Search by Name:</label>
-                            <div className="input-group">
+                            <label className="form-label fw-bold mt-4">Search by Name:</label>
+                            <div className=" input-group ">
                                 <input
                                     type="text"
-                                    className="form-control"
+                                    className="searchByName form-control"
                                     placeholder="Enter student name..."
                                     value={searchTerm} // ✅ Controlled input
                                     onChange={(e) => setSearchTerm(e.target.value)} // ✅ Update search term
                                 />
-                                <button className="btn btn-primary">🔍</button>
+                                <button className=" btnSearch btn btn-primary">🔍</button>
                             </div>
                         </div>
                     </div>
@@ -79,7 +78,6 @@ function OurLearners({ info }) {
                         </table>
                     </div>
                 </div>
-            </div>
         </>
     );
 }

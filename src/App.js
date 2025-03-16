@@ -32,7 +32,7 @@ function App() {
   const teacherList=[
     {id:1,Name:"Mona", LearnList:[{Name:"Amine",Username:"bneba",level:"3A",BillList:250}]},
     {id:2,Name:"Ayoub", LearnList:[{Name:"khalid",Username:"ayoubi",level:"4A",BillList:250}]},
-    {id:3,Name:"hassan", LearnList:[{Name:"tariq",Username:"najari",level:"6A",BillList:250},{Name:"karim",Username:"kantari",level:"6A",BillList:250},{Name:"Mohamed",Username:"bensaidi",level:"6A",BillList:250}]},
+    {id:3,Name:"hassan", LearnList:[{Name:"yakoute amina",Username:"najari",level:"6A",BillList:250},{Name:"karim",Username:"kantari",level:"6A",BillList:250},{Name:"Mohamed",Username:"bensaidi",level:"6A",BillList:250}]},
     {id:4,Name:"hiba", LearnList:[
       {Name:"saad",Username:"botriqa",level:"BAC",BillList:250},
       {Name:"simo",Username:"botriqa",level:"2A",BillList:300},
