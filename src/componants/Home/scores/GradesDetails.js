@@ -5,6 +5,7 @@ import Sidebar from "../sidebar/Sidebar";
 import "./Grades.css"
 import { useState } from "react";
 function OurGrades({info}){
+    let [filtrBylevel,setFiltrBylevel]=useState("")
     const [grades, setGrades] = useState(info.map(student => ({Grade1: "",Grade2: "",Grade3: "", Note: ""})));
     const handleChange = (index, field, value) => {
         const updatedGrades = [...grades];
@@ -26,12 +27,23 @@ function OurGrades({info}){
     if (!selectedTeacher) {return <p className="text-danger text-center">❌ Teacher not found</p>;}
 
     // Récupérer les niveaux uniques
-    const levels = [];
+    /*const levels = [];
     info.forEach(teacher => {
         teacher.LearnList.forEach(student => {
             if (!levels.includes(student.level)) {
                 levels.push(student.level); // Ajouter le niveau s'il n'est pas déjà dans le tableau
-        }});});
+        }});});*/
+
+    const levels = [];
+        selectedTeacher.LearnList.forEach(student => {
+            if (!levels.includes(student.level)) {
+                levels.push(student.level); // Ajouter le niveau s'il n'est pas déjà dans le tableau
+        }});
+
+    const filteredStudents = filtrBylevel 
+    ? selectedTeacher.LearnList.filter(student => student.level === filtrBylevel)
+    : selectedTeacher.LearnList;
+
     return(
         <>
             <Header />
@@ -44,7 +56,7 @@ function OurGrades({info}){
                     <h2 className="text-primary">Teacher: {selectedTeacher.Name}</h2>
                     <div className="row g-3 align-items-center mb-4">
                         <div className="d-flex col-md-4">
-                            <select className="form-select">
+                            <select className="form-select" onChange={(e)=>setFiltrBylevel(e.target.value)}>
                                 <option value="">All Levels</option>
                                 {levels.map((level, index) => (
                                     <option key={index} value={level}>
@@ -68,15 +80,14 @@ function OurGrades({info}){
                                 </tr>
                             </thead>
                             <tbody>
-                                {selectedTeacher.LearnList.map((student, index) => (
+                            {filteredStudents.map((student, index) => (
                                     <tr key={index}>
-                                        <td style={{width:200}}>{student.Name} {student.Username}</td>
-                                        <td><input type="number" className="form-control" value={grades[index].Grade1} onChange={(e) => handleChange(index, "Grade1", e.target.value)} /></td>
-                        <td><input type="number" className="form-control" value={grades[index].Grade2} onChange={(e) => handleChange(index, "Grade2", e.target.value)} /></td>
-                        <td><input type="number" className="form-control" value={grades[index].Grade3} onChange={(e) => handleChange(index, "Grade3", e.target.value)} /></td>
-                        <td><input type="text" className="form-control" value={grades[index].Note} readOnly /></td>
-                        <td><button className="btn btn-primary" onClick={() => handleClick(index)}>Save</button></td>
-
+                                        <td style={{ width: 200 }}>{student.Name} {student.Username}</td>
+                                        <td><input type="number" className="form-control" value={grades[index]?.Grade1 || ""} onChange={(e) => handleChange(index, "Grade1", e.target.value)} /></td>
+                                        <td><input type="number" className="form-control" value={grades[index]?.Grade2 || ""} onChange={(e) => handleChange(index, "Grade2", e.target.value)} /></td>
+                                        <td><input type="number" className="form-control" value={grades[index]?.Grade3 || ""} onChange={(e) => handleChange(index, "Grade3", e.target.value)} /></td>
+                                        <td><input type="text" className="form-control" value={grades[index]?.Note || ""} readOnly /></td>
+                                        <td><button className="btn btn-primary" onClick={() => handleClick(index)}>Save</button></td>
                                     </tr>
                                 ))}
                             </tbody>

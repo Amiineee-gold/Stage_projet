@@ -33,12 +33,15 @@ function App() {
     {id:1,Name:"Mona", LearnList:[{Name:"Amine",Username:"bneba",level:"3A",BillList:250}]},
     {id:2,Name:"Ayoub", LearnList:[{Name:"khalid",Username:"ayoubi",level:"4A",BillList:250}]},
     {id:3,Name:"hassan", LearnList:[{Name:"tariq",Username:"najari",level:"6A",BillList:250},{Name:"karim",Username:"kantari",level:"6A",BillList:250},{Name:"Mohamed",Username:"bensaidi",level:"6A",BillList:250}]},
-    {id:4,Name:"hiba", LearnList:[{Name:"saad",Username:"botriqa",level:"BAC",BillList:250},{Name:"saad",Username:"botriqa",level:"BAC",BillList:250},{Name:"saad",Username:"botriqa",level:"BAC",BillList:250}]},
+    {id:4,Name:"hiba", LearnList:[
+      {Name:"saad",Username:"botriqa",level:"BAC",BillList:250},
+      {Name:"simo",Username:"botriqa",level:"2A",BillList:300},
+      {Name:"ayoub",Username:"botriqa",level:"3A",BillList:400},
+      {Name:"amine",Username:"botriqa",level:"TC",BillList:150},
+      {Name:"hassan",Username:"botriqa",level:"SVT",BillList:250}
+    ]},
     {id:5,Name:"hiba", LearnList:[{Name:"tariq",Username:"najari",level:"6A",BillList:250},{Name:"karim",Username:"kantari",level:"6A",BillList:250},{Name:"Mohamed",Username:"bensaidi",level:"6A",BillList:250}]},
-    {id:6,Name:"hiba", LearnList:[{Name:"tariq",Username:"najari",level:"2A",BillList:250},{Name:"karim",Username:"kantari",level:"6A",BillList:250},{Name:"Mohamed",Username:"bensaidi",level:"6A",BillList:250}]},
-    {id:7,Name:"hiba", LearnList:[{Name:"tariq",Username:"najari",level:"6A",BillList:250},{Name:"karim",Username:"kantari",level:"6A",BillList:250},{Name:"Mohamed",Username:"bensaidi",level:"6A",BillList:250}]},
-    {id:8,Name:"hiba", LearnList:[{Name:"tariq",Username:"najari",level:"6A",BillList:250},{Name:"karim",Username:"kantari",level:"6A",BillList:250},{Name:"Mohamed",Username:"bensaidi",level:"6A",BillList:250}]},
-    {id:9,Name:"aya", LearnList:[]}
+    {id:6,Name:"aya", LearnList:[]}
   ]
   
   return (
