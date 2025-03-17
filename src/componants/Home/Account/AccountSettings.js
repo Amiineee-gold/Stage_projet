@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { users, updateUsers } from "../../login/data";
-import Sidebar2 from "./sidebar2";
+
 import "./AccountSetting.css";
-import Header from "../Header/Header";
-import Sidebar from "../sidebar/Sidebar";
+
 
 const AccountSettings = () => {
   const [email, setEmail] = useState(users.email);
@@ -29,11 +28,9 @@ const AccountSettings = () => {
   };
 
   return (
-    <><Header />
-            <Sidebar />
     
     <div className="settings-container">
-      <Sidebar2 />
+      
       <div className="settings-content">
         <h2>Login Information</h2>
         <label>Account Email</label>
@@ -63,7 +60,7 @@ const AccountSettings = () => {
         <button onClick={handleSaveChanges}>Save Changes</button>
       </div>
     </div>
-    </>
+    
   );
 };
 

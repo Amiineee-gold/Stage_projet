@@ -24,10 +24,8 @@ import Notes from './componants/HomeTeacher/Notes/Notes';
 import HomeTeachers from './componants/HomeTeacher/HomeTeachers'
 import AbsenceT from './componants/HomeTeacher/Absences/AbsencesT';
 import ProfileT from './componants/HomeTeacher/Profile/ProfileT';
-import AccountSettings from "./componants/Home/Account/AccountSettings";
-import Privacy from "./componants/Home/Account/Privacy";
-import ExportData from "./componants/Home/Account/ExportData";
 
+import Account from "./componants/Home/Account/Account";
 function App() {
   const teacherList=[
     {id:1,Name:"Mona", LearnList:[{Name:"Amine",Username:"bneba",level:"3A",BillList:250}]},
@@ -74,10 +72,8 @@ function App() {
         <Route path="/GradesList/:id" element={<OurGrades info={teacherList}/>} />
 
 
-        <Route path="/settings" element={<AccountSettings />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/export" element={<ExportData />} />
-        <Route path="*" element={<AccountSettings />} />
+
+        <Route path="*" element={<Account />} />
         
         
         

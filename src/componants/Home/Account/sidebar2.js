@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import { FaUserCog, FaLock, FaDownload } from "react-icons/fa";
 import "./sidebar2.css";
 
+
 const Sidebar2 = () => {
   return (
+    
+    
     <div className="oursidebar">
         
       <ul>
@@ -24,6 +27,7 @@ const Sidebar2 = () => {
         </li>
       </ul>
     </div>
+   
   );
 };
 

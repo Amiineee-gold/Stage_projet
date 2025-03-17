@@ -1,26 +1,6 @@
-.settings-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f8f9fa;
-}
 
-.settings-container {
-  display: flex;
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-left: 250px;
-  margin-top: 50px;
-  
-}
 
-.settings-content {
-  padding: 20px;
-  width: 700px;
-}
+
 
 .settings-content label {
   font-weight: bold;
