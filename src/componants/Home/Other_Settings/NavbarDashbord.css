@@ -1,0 +1,79 @@
+.navbar {
+    display: flex;
+    width: 100vw;
+    background-color: #042140;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 5.5%;
+    color: white;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 1000;
+  }
+  
+  .navbar-section {
+    width: 100%;
+  }
+  
+  .navbar-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+  }
+  
+  .navbar-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 1rem;
+    position: relative; /* Required for positioning the dropdown */
+  }
+  
+  .navbar-icon {
+    margin-right: 0.5rem;
+  }
+  
+  .school-item,
+  .new-item,
+  .profile-item {
+    position: relative; /* Ensure the dropdown is positioned relative to this item */
+  }
+  
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position below the item */
+    right: 0;
+    background-color: #042140;
+    color: #414346;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 200px;
+    z-index: 1001; /* Ensure it appears above other content */
+  }
+  
+  .dropdown link {
+    margin: 0.5rem 0;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .dropdown p :hover{
+    background-color: rgb(75, 142, 242);
+  }
+  
+  .profile-header {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .profile-content p {
+    margin: 0.5rem 0;
+  }

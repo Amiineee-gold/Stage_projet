@@ -1,0 +1,83 @@
+/* Sidebar container */
+.DashSidebar {
+    background-color: #042140;
+    color: white;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 40px;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: width 0.3s ease;
+}
+
+/* Collapsed Sidebar */
+.DashSidebar.collapsed {
+    width: 60px;
+}
+/* Sidebar Title */
+.DashSidebar-title {
+    font-size: 20px;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+/* Hide title when collapsed */
+.DashSidebar.collapsed .DashSidebar-title {
+    display: none;
+}
+
+/* Menu */
+.DashMenu {
+    flex-grow: 1; /* Makes the menu take all available space */
+    padding: 10px;
+}
+
+/* Menu Item */
+.DashMenu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.DashMenu-item:hover {
+    background-color: #1e40af;
+}
+
+/* Menu Icon */
+.DashMenu-item svg {
+    margin-right: 10px;
+}
+
+/* Hide text when collapsed */
+.DashSidebar.collapsed .DashMenu-text {
+    display: none;
+}
+
+/* Collapse Button - Placed at the Bottom */
+.collapse-button {
+    background: none;
+    border: none;
+    color: rgb(70, 194, 247);
+    cursor: pointer;
+    gap: 10px;
+    position: relative;
+    bottom: 250px;
+}
+.DashCollaps-text{
+    color: rgb(70, 194, 247);
+}
+.DashMenu .collapse-button {
+    background-color: red;
+}
+/* Hide collapse button text when collapsed */
+.DashSidebar.collapsed .collapse-button .DashCollaps-text {
+    display: none;
+}
