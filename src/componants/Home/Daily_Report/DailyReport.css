@@ -1,0 +1,101 @@
+.daily-report {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    max-width: 1000px;
+    margin-top: 320px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  }
+  
+  .daily-report h1 {
+    color: #2c3e50;
+    text-align: center;
+    
+    font-size: 24px;
+  }
+  
+  .filters {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  .filters label {
+    margin-right: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .filters select {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .incomes, .expenses, .total {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .incomes h2, .expenses h2, .total h2 {
+    color: #34495e;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  table th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  table td {
+    color: #555;
+  }
+  
+  .incomes table td:nth-child(4),
+  .expenses table td:nth-child(4) {
+    font-weight: bold;
+  }
+  
+  .incomes table td:nth-child(4) {
+    color: #27ae60; /* Green for income */
+  }
+  
+  .expenses table td:nth-child(4) {
+    color: #e74c3c; /* Red for expenses */
+  }
+  
+  .total h2 {
+    text-align: right;
+    color: #2c3e50;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  
+  .total h2 span {
+    font-weight: bold;
+    color: #27ae60; /* Green for total */
+  }

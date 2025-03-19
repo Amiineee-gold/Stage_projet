@@ -81,3 +81,28 @@
 .DashSidebar.collapsed .collapse-button .DashCollaps-text {
     display: none;
 }
+.DashDropdown {
+    background: #34495e;
+    padding-left: 40px;
+    position: absolute;
+    left: 50%;
+  }
+  
+  .DashDropdown-item {
+    display: block;
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    right: 20px;
+    font-size: 10px;
+  }
+  
+  .DashDropdown-item:hover {
+    color: #1abc9c;
+  }
+  
+  .dropdown-icon {
+    margin-left: auto;
+  }
+  

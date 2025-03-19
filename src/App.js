@@ -11,6 +11,7 @@ import Expenses from './componants/Home/Expenses/Expenses'
 import Accounting from './componants/Home/Accounting/Accounting'
 import DailyReport from './componants/Home/Daily_Report/DailyReport'
 import Profile from './componants/Home/Profile/Profile'
+import AccountSettings from "./componants/Home/Account/AccountSettings";
 
 import OtherSettings from './componants/Home/Other_Settings/OtherSetting'
 import StudentForm from './componants/Home/learners/StudentForm'
@@ -24,23 +25,27 @@ import Notes from './componants/HomeTeacher/Notes/Notes';
 import HomeTeachers from './componants/HomeTeacher/HomeTeachers'
 import AbsenceT from './componants/HomeTeacher/Absences/AbsencesT';
 import ProfileT from './componants/HomeTeacher/Profile/ProfileT';
+import Privacy from "./componants/Home/Account/Privacy";
+import ExportData from "./componants/Home/Account/ExportData";
+import Account from './componants/Home/Account/Account';
+import ListeAbsence from './componants/Home/Absences/ListeAbsence';
 
-import Account from "./componants/Home/Account/Account";
 function App() {
-  const teacherList=[
-    {id:1,Name:"Mona", LearnList:[{Name:"Amine",Username:"bneba",level:"3A",BillList:250}]},
-    {id:2,Name:"Ayoub", LearnList:[{Name:"khalid",Username:"ayoubi",level:"4A",BillList:250}]},
-    {id:3,Name:"hassan", LearnList:[{Name:"yakoute amina",Username:"najari",level:"6A",BillList:250},{Name:"karim",Username:"kantari",level:"6A",BillList:250},{Name:"Mohamed",Username:"bensaidi",level:"6A",BillList:250}]},
-    {id:4,Name:"hiba", LearnList:[
-      {Name:"saad",Username:"botriqa",level:"BAC",BillList:250},
-      {Name:"simo",Username:"botriqa",level:"2A",BillList:300},
-      {Name:"ayoub",Username:"botriqa",level:"3A",BillList:400},
-      {Name:"amine",Username:"botriqa",level:"TC",BillList:150},
-      {Name:"hassan",Username:"botriqa",level:"SVT",BillList:250}
-    ]},
-    {id:5,Name:"hiba", LearnList:[{Name:"tariq",Username:"najari",level:"6A",BillList:250},{Name:"karim",Username:"kantari",level:"6A",BillList:250},{Name:"Mohamed",Username:"bensaidi",level:"6A",BillList:250}]},
-    {id:6,Name:"aya", LearnList:[]}
-  ]
+    const teacherList=[
+      {id:1,Name:"Mona", LearnList:[{Name:"Amine",Username:"bneba",level:"3A",BillList:250}]},
+      {id:2,Name:"Ayoub", LearnList:[{Name:"khalid",Username:"ayoubi",level:"4A",BillList:250}]},
+      {id:3,Name:"hassan", LearnList:[{Name:"yakoute amina",Username:"najari",level:"6A",BillList:250},{Name:"karim",Username:"kantari",level:"6A",BillList:250},{Name:"Mohamed",Username:"bensaidi",level:"6A",BillList:250}]},
+      {id:4,Name:"hiba", LearnList:[
+        {Name:"saad",Username:"botriqa",level:"BAC",BillList:250},
+        {Name:"simo",Username:"botriqa",level:"2A",BillList:300},
+        {Name:"ayoub",Username:"botriqa",level:"3A",BillList:400},
+        {Name:"amine",Username:"botriqa",level:"TC",BillList:150},
+        {Name:"hassan",Username:"botriqa",level:"SVT",BillList:250}
+      ]},
+      {id:5,Name:"hiba", LearnList:[{Name:"tariq",Username:"najari",level:"6A",BillList:250},{Name:"karim",Username:"kantari",level:"6A",BillList:250},{Name:"Mohamed",Username:"bensaidi",level:"6A",BillList:250}]},
+      {id:6,Name:"aya", LearnList:[]}
+    ]
+  
   
   return (
     <Router>
@@ -64,18 +69,16 @@ function App() {
         <Route path="/DailyReport" element={<DailyReport />} />
         <Route path="/OtherSettings" element={<OtherSettings />} />
         <Route path="/Profile" element={<Profile />} />
-       
+        <Route path="/ListeAbsence" element={<ListeAbsence />} />
         <Route path="/StudentForm" element={<StudentForm />} />
         <Route path="/Notes" element={<Notes />} />
         <Route path="/HomeTeachers" element={< HomeTeachers/>} />
         <Route path="/scores" element={<OurScore info={teacherList}/>} />
         <Route path="/GradesList/:id" element={<OurGrades info={teacherList}/>} />
-
-
-
-        <Route path="*" element={<Account />} />
-        
-        
+        <Route path="/settings" element={<AccountSettings />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/export" element={<ExportData />} />
+        <Route path='/Account' component={<Account/>}/>
         
       </Routes>
     </Router>
