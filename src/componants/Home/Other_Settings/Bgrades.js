@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarDash from './NavBareDashbord';
+import SidebarDash from './SideBare';
 
 function Bgrades() {
   // State pour stocker les enregistrements de grades avec des données internes
@@ -115,7 +117,10 @@ const filteredGrades = searchName
 : filteredGradesByMonth;
 
   return (
-    <div className="container mt-5">
+    <>
+    <NavbarDash></NavbarDash>
+    <SidebarDash></SidebarDash>
+    <div className="container mt-5"style={{minWidth:"150vh"}}>
       <h2>Grades :</h2>
       <button className="btn btn-primary" onClick={() => setShowModal(true)}>Add Grade</button>
 
@@ -258,6 +263,7 @@ const filteredGrades = searchName
         </div>
       )}
     </div>
+    </>
   );
 }
 

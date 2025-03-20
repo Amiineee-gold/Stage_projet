@@ -8,8 +8,7 @@
     position: fixed;
     top: 40px;
     left: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
+    width: 250px;
     transition: width 0.3s ease;
 }
 
@@ -17,22 +16,15 @@
 .DashSidebar.collapsed {
     width: 60px;
 }
-/* Sidebar Title */
-.DashSidebar-title {
-    font-size: 20px;
-    font-weight: bold;
-    transition: opacity 0.3s ease;
-    color: white;
-}
 
-/* Hide title when collapsed */
-.DashSidebar.collapsed .DashSidebar-title {
+/* Hide text when collapsed */
+.DashSidebar.collapsed .DashMenu-text {
     display: none;
 }
 
 /* Menu */
 .DashMenu {
-    flex-grow: 1; /* Makes the menu take all available space */
+    flex-grow: 1;
     padding: 10px;
 }
 
@@ -45,6 +37,7 @@
     text-decoration: none;
     color: white;
     transition: background 0.3s ease;
+    position: relative;
 }
 
 .DashMenu-item:hover {
@@ -56,12 +49,7 @@
     margin-right: 10px;
 }
 
-/* Hide text when collapsed */
-.DashSidebar.collapsed .DashMenu-text {
-    display: none;
-}
-
-/* Collapse Button - Placed at the Bottom */
+/* Collapse Button */
 .collapse-button {
     background: none;
     border: none;
@@ -71,38 +59,68 @@
     position: relative;
     bottom: 250px;
 }
-.DashCollaps-text{
+
+/* Collapse text */
+.DashCollaps-text {
     color: rgb(70, 194, 247);
 }
-.DashMenu .collapse-button {
-    background-color: red;
-}
+
 /* Hide collapse button text when collapsed */
 .DashSidebar.collapsed .collapse-button .DashCollaps-text {
     display: none;
 }
+
+/* Dropdown Menu */
 .DashDropdown {
     background: #34495e;
-    padding-left: 40px;
     position: absolute;
-    left: 50%;
-  }
-  
-  .DashDropdown-item {
+    left: 100%;
+    top: 0;
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Assure que le dropdown reste au-dessus */
     display: block;
-    padding: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show dropdown when hovering over an item */
+.DashMenu-item-wrapper:hover .DashDropdown {
+    display: block;
+}
+.DashMenu-item:hover .DashDropdown,
+.DashDropdown:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Dropdown item */
+.DashDropdown-item {
+    display: block;
+    padding: 8px 12px;
     color: white;
     text-decoration: none;
-    position: relative;
-    right: 20px;
-    font-size: 10px;
-  }
-  
-  .DashDropdown-item:hover {
+    font-size: 12px;
+    transition: background 0.3s ease;
+}
+
+.DashDropdown-item:hover {
     color: #1abc9c;
-  }
-  
-  .dropdown-icon {
-    margin-left: auto;
-  }
-  
+}
+
+/* Special case when collapsed */
+.DashSidebar.collapsed .DashDropdown {
+    position: absolute;
+    left: 60px;
+    background: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    min-width: 150px;
+    border-radius: 5px;
+}
+
+.DashSidebar.collapsed .DashMenu-item-wrapper:hover .DashDropdown {
+    display: block;
+}

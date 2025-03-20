@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarDash from './NavBareDashbord';
+import SidebarDash from './SideBare';
 
 function BAbsenceRecord() {
   // State pour stocker les enregistrements d'absence avec des données internes
@@ -116,7 +118,11 @@ const filteredAbsences = searchName
 : filteredAbsencesByMonth;
 
   return (
-    <div className="container mt-5">
+    <>
+      <NavbarDash></NavbarDash>
+        <SidebarDash></SidebarDash>
+
+    <div className="container mt-5" style={{minWidth:"150vh"}}>
       <h2>Absence Record</h2>
       <button className="btn btn-primary" onClick={() => setShowModal(true)}>Add Absence</button>
 
@@ -259,6 +265,8 @@ const filteredAbsences = searchName
         </div>
       )}
     </div>
+    </>
+
   );
 }
 

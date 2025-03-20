@@ -8,9 +8,11 @@ const Absence = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="container mt-4" style={{width:"900px",margin:40}}>
-            <Sidebar/>
-            <Header/>
+        <>
+        <Sidebar/>
+        <Header/>
+        <div className="container mt-4" style={{minWidth:"100vh",display:"flex",justifyContent:"center",alignItems:"center", flexDirection:"column",marginLeft:250}}>
+            
             <h2>Liste des Enseignants</h2>
             <table className="table table-striped table-bordered" style={{width:"600px",textAlign:"center"}}>
                 <thead>
@@ -31,6 +33,8 @@ const Absence = () => {
                 </tbody>
             </table>
         </div>
+        </>
+        
     );
 };
 

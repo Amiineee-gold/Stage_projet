@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarDash from './NavBareDashbord';
+import SidebarDash from './SideBare';
 
 function BBills() {
   // State pour stocker les enregistrements de Bills avec des données internes
@@ -115,7 +117,10 @@ function BBills() {
     : filteredBillsByMonth;
 
   return (
-    <div className="container mt-5">
+    <>
+    <NavbarDash></NavbarDash>
+    <SidebarDash></SidebarDash>
+    <div className="container mt-5" style={{minWidth:"150vh"}}>
       <h2>Bills :</h2>
       <button className="btn btn-primary" onClick={() => setShowModal(true)}>Add Bills</button>
 
@@ -259,6 +264,8 @@ function BBills() {
         </div>
       )}
     </div>
+    </>
+
   );
 }
 

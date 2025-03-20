@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaEdit, FaTrash, FaInfoCircle } from 'react-icons/fa';
+import SidebarDash from './SideBare';
+import NavbarDash from './NavBareDashbord';
 
 function BLearners() {
   const [learners, setLearners] = useState([
@@ -112,11 +114,13 @@ function BLearners() {
   };
 
   return (
-    <div className="container mt-5">
+    <>
+      <NavbarDash></NavbarDash>
+      <SidebarDash></SidebarDash>
+      <div className="container mt-5" style={{minWidth:"160vh",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
       <h2>Learners</h2>
-      <button className="btn btn-primary mb-3" onClick={() => setShowModal(true)}>Add Learner</button>
-
-      <table className="table table-striped table-bordered mt-3">
+      <button className="btn btn-primary mb-3" onClick={() => setShowModal(true)} style={{display:"flex",justifyContent:"flex-start"}}>Add Learner</button>
+      <table className="table table-striped table-bordered mt-3"style={{minWidth:"150vh"}}>
         <thead>
           <tr>
             <th>Name</th>
@@ -326,6 +330,8 @@ function BLearners() {
         </div>
       )}
     </div>
+    </>
+    
   );
 }
 

@@ -25,7 +25,7 @@ const ListeAbsence = () => {
     };
 
     return (
-        <div className="container mt-4" >
+        <div className="container mt-4">
             <Sidebar/>
             <Header/>
             <h2>Liste des Absences</h2>

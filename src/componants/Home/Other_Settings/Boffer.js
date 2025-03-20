@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarDash from './NavBareDashbord';
+import SidebarDash from './SideBare';
 
 function Boffer() {
   // Initialize the offers state with internal data
@@ -105,7 +107,10 @@ function Boffer() {
   };
 
   return (
-    <div className="container mt-5">
+    <>
+    <SidebarDash></SidebarDash>
+    <NavbarDash></NavbarDash>
+    <div className="container mt-5" style={{minWidth:"150vh"}}>
       <h2>Offers</h2>
       <button className="btn btn-primary" onClick={() => setShowModal(true)}>Add Offer</button>
 
@@ -243,6 +248,7 @@ function Boffer() {
         </div>
       )}
     </div>
+    </>
   );
 }
 

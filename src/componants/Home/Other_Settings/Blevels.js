@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import NavbarDash from './NavBareDashbord';
+import SidebarDash from './SideBare';
 
 const Blevels = () => {
   const [levels, setLevels] = useState([]);
@@ -96,7 +98,10 @@ const Blevels = () => {
   }
 
   return (
-    <div className="container mt-5">
+    <>
+    <NavbarDash></NavbarDash>
+    <SidebarDash></SidebarDash>
+    <div className="container mt-5" style={{minWidth:"150vh"}}>
       <h1 className="mb-4">Levels</h1>
 
       {/* Bouton pour ouvrir le modal d'ajout */}
@@ -309,6 +314,8 @@ const Blevels = () => {
         </div>
       )}
     </div>
+    </>
+
   );
 };
 

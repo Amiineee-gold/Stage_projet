@@ -5,14 +5,12 @@ import ForgotPassword from './componants/login/ForgotPassword';
 import Home from './componants/Home/Home';
 import Learner from './componants/Home/learners/Learner'
 import Teacher from './componants/Home/teachers/Teacher';
-
 import Absence from './componants/Home/Absences/Absence'
 import Expenses from './componants/Home/Expenses/Expenses'
 import Accounting from './componants/Home/Accounting/Accounting'
 import DailyReport from './componants/Home/Daily_Report/DailyReport'
 import Profile from './componants/Home/Profile/Profile'
 import AccountSettings from "./componants/Home/Account/AccountSettings";
-
 import OtherSettings from './componants/Home/Other_Settings/OtherSetting'
 import StudentForm from './componants/Home/learners/StudentForm'
 import StudentEdit from './componants/Home/learners/StudentEdit';
@@ -29,6 +27,15 @@ import Privacy from "./componants/Home/Account/Privacy";
 import ExportData from "./componants/Home/Account/ExportData";
 import Account from './componants/Home/Account/Account';
 import ListeAbsence from './componants/Home/Absences/ListeAbsence';
+import StudentListDash from './componants/Home/Other_Settings/users';
+import AddUserDash from './componants/Home/Other_Settings/addUser';
+import ProfileDash from './componants/Home/Other_Settings/ProfileDash';
+import BLearners from './componants/Home/Other_Settings/BLearners';
+import Boffer from './componants/Home/Other_Settings/Boffer';
+import Bgrades from './componants/Home/Other_Settings/Bgrades';
+import Blevels from './componants/Home/Other_Settings/Blevels';
+import BBills from './componants/Home/Other_Settings/Bbills';
+import BAbsenceRecord from './componants/Home/Other_Settings/BAbsenceRecord';
 
 function App() {
     const teacherList=[
@@ -79,6 +86,25 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/export" element={<ExportData />} />
         <Route path='/Account' component={<Account/>}/>
+        <Route path='/allusers' element={<StudentListDash/>}/>
+        <Route path='/addusers' element={<AddUserDash/>}/>
+        <Route path='/usersProfile' element={<ProfileDash/>}/>
+        <Route path='/LearnerDash' element={<BLearners/>}/>
+        <Route path='/OffreDash' element={<Boffer/>}/>
+        <Route path='/GradeDash' element={<Bgrades/>}/>
+        <Route path='/LevelDash' element={<Blevels/>}/>
+        <Route path='/BillsDash' element={<BBills/>}/>
+        <Route path='/AbsenceDash' element={<BAbsenceRecord/>}/>
+
+
+
+
+
+
+
+
+
+
         
       </Routes>
     </Router>
