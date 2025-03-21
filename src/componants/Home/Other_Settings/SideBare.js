@@ -46,7 +46,7 @@ const SidebarDash = () => {
     { name: "Offers", icon: <Wallet />, path: "/offreDash" },
     { name: "Absence Records", icon: <Calendar />, path: "/AbsenceDash" },
     { name: "Grades", icon: <FileText />, path: "/GradeDash" },
-    { name: "Memberships", icon: <Briefcase />, path: "/memberships" },
+    { name: "Memberships", icon: <Briefcase />, path: "/Membership" },
     { name: "Bills", icon: <DollarSign />, path: "/billsDash" },
   ];
 

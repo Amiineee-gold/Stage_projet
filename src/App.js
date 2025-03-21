@@ -36,6 +36,7 @@ import Bgrades from './componants/Home/Other_Settings/Bgrades';
 import Blevels from './componants/Home/Other_Settings/Blevels';
 import BBills from './componants/Home/Other_Settings/Bbills';
 import BAbsenceRecord from './componants/Home/Other_Settings/BAbsenceRecord';
+import MembershipTable from './componants/Home/Other_Settings/Membershiptabel';
 
 function App() {
     const teacherList=[
@@ -95,6 +96,7 @@ function App() {
         <Route path='/LevelDash' element={<Blevels/>}/>
         <Route path='/BillsDash' element={<BBills/>}/>
         <Route path='/AbsenceDash' element={<BAbsenceRecord/>}/>
+        <Route path='Membership' element={<MembershipTable/>}></Route>
 
 
 

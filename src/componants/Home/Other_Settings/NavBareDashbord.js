@@ -38,16 +38,13 @@ const NavbarDash = () => {
             <span>New</span>
             {isNewHovered && (
               <div className="dropdown">
-                <Link>Post</Link>
-                <Link>Media</Link>
-                <Link>Template</Link>
-                <Link>Learner</Link>
-                <Link>Offer</Link>
-                <Link>Absence Record</Link>
-                <Link>Grade</Link>
-                <Link>Membership</Link>
-                <Link>Bill</Link>
-                <Link>User</Link>
+                <Link to="/LearnerDash">Learner</Link>
+                <Link to="/OffreDash">Offer</Link>
+                <Link to="/AbsenceDash">Absence Record</Link>
+                <Link to="/GradeDash">Grade</Link>
+                <Link to="/Membership">Membership</Link>
+                <Link to="/BillsDash">Bill</Link>
+                <Link to="/allusers">User</Link>
               </div>
             )}
           </li>
